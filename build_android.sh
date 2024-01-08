@@ -23,10 +23,10 @@ CXX="${TOOL_PREFIX}${API}-clang++"
 CROSS_PREFIX=$TOOLCHAIN/bin/aarch64-linux-android-
 
 #第三方库
-FDK_INCLUDE=${PWD}/fdk-aac/android/$CPU/include
-FDK_LIB=${PWD}/fdk-aac/android/$CPU/lib
-X264_INCLUDE=${PWD}/x264/android/$CPU/include
-X264_LIB=${PWD}/x264/android/$CPU/lib
+FDK_INCLUDE=${PWD}/fdk-aac_副本/android/$CPU/include
+FDK_LIB=${PWD}/fdk-aac_副本/android/$CPU/lib
+X264_INCLUDE=${PWD}/x264_副本/android/$CPU/include
+X264_LIB=${PWD}/x264_副本/android/$CPU/lib
 # 定义执行configure的shell方法
 function build_android() {
     ./configure \
@@ -37,7 +37,8 @@ function build_android() {
     --disable-postproc \
     --enable-static \
     --disable-shared \
-    --disable-debug \
+    --enable-debug \
+    --disable-stripping \
     --enable-small \
     --enable-jni \
     --disable-mediacodec \
